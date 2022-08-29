@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/form-style.css" />
+    <link rel="icon" href="../../assets/images/redberry-icon.svg" />
+    <title>Employee Info</title>
+  </head>
+  <body>
+    <div class="arrowback">
+      <a href="../../index.html">
+        <img src="../../assets/images/Back-arrow.svg"
+      /></a>
+    </div>
+
+    <div class="pages">
+      <p>თანამშრომლის ინფო</p>
+      <p>ლეპტოპის მახასიათებლები</p>
+    </div>
+
+    <section>
+      <div class="namelstname">
+        <div class="name">
+          <label for="Name">სახელი</label> <br />
+          <input type="text" name="Name" id="Name" placeholder="სახელი" />
+          <h5>მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
+        </div>
+
+        <div class="lastname">
+          <label for="Lastname">გვარი</label> <br />
+          <input
+            type="text"
+            name="Lastname"
+            id="Lastname"
+            placeholder="გვარი"
+          />
+          <h5>მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
+        </div>
+      </div>
+
+      <div class="teams">
+        <select class="teams" id="teams">
+          <option hidden selected>თიმი</option>
+        </select>
+        <br />
+      </div>
+
+      <div class="positions">
+        <select id="positions">
+          <option hidden selected>პოზიცია</option></select
+        ><br />
+      </div>
+
+      <div class="email">
+        <label for="Email">მეილი</label> <br />
+        <input
+          type="email"
+          name="Email"
+          id="Email"
+          placeholder="example@redberry.ge"
+        />
+        <h5>უნდა მთავრდებოდეს @redberry.ge-ით</h5>
+      </div>
+
+      <div class="phone">
+        <label for="Phone">ტელეფონის ნომერი</label> <br />
+        <input
+          type="number"
+          name="Phone"
+          id="Phone"
+          placeholder="+995 598 00 00 00"
+        />
+        <h5>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</h5>
+      </div>
+
+      <a href="./laptop.html" class="next-btn">შემდეგი</a>
+    </section>
+
+    <div class="logo">
+      <img src="../../assets/images/redberry-icon.svg" />
+    </div>
+    <script src="../script/getData.js"></script>
+    <script src="../script/validations.js"></script>
+  </body>
+</html>
