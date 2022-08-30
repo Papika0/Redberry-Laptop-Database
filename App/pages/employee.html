@@ -24,7 +24,14 @@
       <div class="namelstname">
         <div class="name">
           <label for="Name" id="name-label">სახელი</label> <br />
-          <input type="text" name="Name" id="Name" placeholder="სახელი" />
+          <input
+            type="text"
+            name="Name"
+            id="Name"
+            placeholder="სახელი"
+            onkeyup="setInput(this.id ,this.value)"
+            onload="getInput(this.id)"
+          />
           <h5 id="name-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
         </div>
 
@@ -35,20 +42,31 @@
             name="Lastname"
             id="Lastname"
             placeholder="გვარი"
+            onkeyup="setInput(this.id ,this.value)"
+            onload="getInput(this.id)"
           />
           <h5 id="lastname-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
         </div>
       </div>
 
       <div class="teams">
-        <select class="teams" id="teams">
+        <select
+          class="teams"
+          id="teams"
+          onchange="setInput(this.id ,this.value)"
+          onload="getInput(this.id)"
+        >
           <option hidden selected>თიმი</option>
         </select>
         <br />
       </div>
 
       <div class="positions">
-        <select id="positions">
+        <select
+          id="positions"
+          onchange="setInput(this.id ,this.value)"
+          onload="getInput(this.id)"
+        >
           <option hidden selected>პოზიცია</option></select
         ><br />
       </div>
@@ -60,6 +78,8 @@
           name="Email"
           id="Email"
           placeholder="example@redberry.ge"
+          onkeyup="setInput(this.id ,this.value)"
+          onload="getInput(this.id)"
         />
         <h5 id="email-h5">უნდა მთავრდებოდეს @redberry.ge-ით</h5>
       </div>
@@ -67,10 +87,12 @@
       <div class="phone">
         <label for="Phone" id="phone-label">ტელეფონის ნომერი</label> <br />
         <input
-          type="number"
+          type="text"
           name="Phone"
           id="Phone"
           placeholder="+995 598 00 00 00"
+          onkeyup="setInput(this.id ,this.value)"
+          onload="getInput(this.id)"
         />
         <h5 id="phone-h5">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</h5>
       </div>
@@ -83,5 +105,6 @@
     </div>
     <script src="../script/getData.js"></script>
     <script src="../script/validations.js"></script>
+    <script src="../script/storageData.js"></script>
   </body>
 </html>

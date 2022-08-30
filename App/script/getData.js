@@ -1,17 +1,13 @@
-function getData(api, selectId) {
-  async function getBase() {
-    const response = await fetch(api);
-    const base = await response.json();
-
-    [base][0].data.map((char) => {
-      var optionCreation = document.createElement("option");
-      optionCreation.text = char.name;
-      optionCreation.id = char.id;
-      document.getElementById(selectId).appendChild(optionCreation);
-    });
-  }
-
-  getBase();
+async function getData(api, selectId) {
+  const response = await fetch(api);
+  const base = await response.json();
+  [base][0].data.map((char) => {
+    var optionCreation = document.createElement("option");
+    optionCreation.text = char.name;
+    optionCreation.value = char.name;
+    optionCreation.id = char.id;
+    document.getElementById(selectId).appendChild(optionCreation);
+  });
 }
 
 getData("https://pcfy.redberryinternship.ge/api/teams", "teams");

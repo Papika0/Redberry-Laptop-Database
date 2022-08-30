@@ -25,6 +25,7 @@ nextBtn.addEventListener("click", (e) => {
   if (!validation()) {
     e.preventDefault();
   } else {
+    location.href = "../pages/laptop.html";
   }
 });
 
