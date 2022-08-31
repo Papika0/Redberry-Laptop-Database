@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../assets/images/redberry-icon.svg" />
+    <link rel="stylesheet" href="../styles/laptop-styles.css">
+    <title>Laptop info</title>
+  </head>
+  <body>
+    
+    <div class="pages">
+         <a class="arrowback" href="../../index.html">
+        <img src="../../assets/images/Back-arrow.svg" 
+      /></a>
+      <p style="margin-left:31.3%;">თანამშრომლის ინფო</p>
+      <p>ლეპტოპის მახასიათებლები</p>
+    </div>
+<hr class="page-hr">
+    <section class="section">
+        <form class="form">
+
+            <div class="upload-img">
+                <input type="file" accept="image/*" onchange="loadPhoto(event)">
+                <img id="preview">
+                <h4 class="laptop-h4">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h5>
+            </div>
+
+                <div class="name-brand">
+                    <div class="laptop-name">
+                    <label  class="label">ლეპტოპის სახელი</label></br>
+                    <input placeholder="HP">
+                    <h5 >ლათინური ასოები, ციფრები, !@#$%%^*()_+=</h5>
+                </div>
+
+                    <select class="laptop-brand" id="brands" >
+                        <option disabled selected hidden>ლეპტოპის ბრენდი</option>
+                    </select>
+                </div>
+                <hr class="hr">
+
+                <div class="lp-cpu">
+                    <select class="cpu-option" id="cpus">
+                        <option disabled selected hidden>CPU</option>
+                    </select>
+                    <div class="cpu-cores">
+                        <label class="label">CPU-ს ბირთვი</label></br>
+                        <input type="number" placeholder="14" >
+                        <h5 >მხოლოდ ციფრები</h5>
+                    </div>
+                    <div class="cpu-threads">
+                        <label class="label">CPU-ს ნაკადი</label></br>
+                        <input type="number" placeholder="365" >
+                        <h5 >მხოლოდ ციფრები</h5>
+                    </div>
+                </div>
+
+                <div class="lp-memory">
+                    <div class="lp-ram">
+                        <label class="label">ლეპტოპის RAM(GB)</label></br>
+                        <input type="number" placeholder="16" >
+                        <h5 >მხოლოდ ციფრები</h5>
+                    </div>
+                    <div class="ram-type">
+                    <label for="type" class="label">მეხსიერების ტიპი</label></br>
+                        <label ><input type="radio" name="type"><span>SDD</span> 
+                    </label>
+                    <label >
+                        <input style="margin-left: 2rem;" type="radio" name="type"><span>HDD</span> 
+                    </label>
+                    </div>
+                </div>
+                <hr class="hr">
+
+                <div class="price-date">
+                    <div class="purchase-date" style="margin-bottom: 17px">
+                        <label class="label">შეძენის რიცხვი(არჩევითი)</label></br>
+                        <input type="date"  >
+                    </div>
+                    <div class="lp-price">
+                        <label class="label">ლეპტოპის ფასი</label></br>
+                        <input type="number" placeholder="0000" >
+                        <h5>მხოლოდ ციფრები</h5>
+                    </div>
+                </div>
+
+                <div class="condition">
+                    <label for="condition"  class="label">ლეპტოპის მდგომარეობა</label> <br>
+                   <label > 
+                        <input type="radio" name="condition" ><span>ახალი</span> 
+                    </label>
+                    <label >
+                        <input style="margin-left: 2rem;" type="radio" name="condition" ><span>მეორადი</span> 
+                    </label>
+                </div>
+                <div class="page-buttons">
+                    <a href="/App/pages/employee.html" class="back-btn">უკან</a>
+                    <button class="next-btn">დამახსოვრება</button>
+                </div>
+            
+        </form>
+    </section>
+    <script  src="../script/laptop.js"></script>
+
+  </body>
+</html>

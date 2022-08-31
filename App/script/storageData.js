@@ -19,7 +19,10 @@ function checkSelection(char) {
 }
 function setInput(field, value) {
   localStorage.setItem(field, value);
-  console.log(field, value);
+}
+
+function getInput(value) {
+  localStorage.getItem(value);
 }
 
 window.onload = (event) => {

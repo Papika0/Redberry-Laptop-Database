@@ -1,0 +1,247 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(../../assets/fonts/HelveticaNeue.ttc);
+}
+
+@media screen and (min-width: 845px) {
+  .section {
+    background-color: white;
+    margin: 2.2% 18% 10%;
+  }
+
+  .form {
+    padding: 5.5% 14.2% 0;
+  }
+}
+
+@media screen and (max-width: 844px) {
+  .section {
+    background-color: white;
+    margin: 0;
+  }
+  .form {
+    padding: 1.2% 4.2% 0;
+    display: block;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: HelveticaNeue;
+}
+
+body {
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.arrowback {
+  margin-left: 3.65%;
+  display: inline-block;
+}
+
+.pages {
+  width: 100%;
+  display: inline-block;
+}
+
+.pages p {
+  display: inline-block;
+  margin-top: 4.7%;
+  margin-right: 3.45%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section {
+  background-color: white;
+  margin: 2.2% 18% 10%;
+  height: 1550px;
+}
+
+form {
+  padding: 5.5% 14.2% 0;
+}
+/* Photo upload */
+.upload-img {
+  width: 100%;
+  height: 25rem;
+  border-radius: 15px;
+  border: none;
+  outline: 2px dashed #4386a9;
+  background-color: #f7f7f7;
+}
+
+.upload-img input {
+  position: relative;
+  top: 60%;
+  left: 40%;
+  width: 25%;
+  height: 14%;
+  color: transparent;
+}
+
+.upload-img input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.upload-img input::before {
+  content: "ატვირთე";
+  display: inline-block;
+  background: #62a1eb;
+  border-radius: 8px;
+  padding: 7% 22%;
+  user-select: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+}
+.upload-img input:hover::before,
+.next-btn:hover {
+  background: #317ad0;
+  transition: 200ms ease;
+}
+.upload-img input:active::before,
+.next-btn:active {
+  background: #1a5dab;
+}
+
+.upload-img h4 {
+  user-select: none;
+  width: 30%;
+  line-height: 200%;
+  font-size: 20px;
+  color: #4386a9;
+  margin: 5% auto 0;
+  text-align: center;
+}
+
+/* inputs fields  */
+.label {
+  font-weight: bold;
+  font-size: 18px;
+}
+h5 {
+  font-weight: 300;
+  font-size: 14px;
+  color: #2e2e2e;
+}
+.name-brand,
+.lp-cpu,
+.lp-memory,
+.price-date {
+  display: flex;
+  margin-top: 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+.name-brand input,
+.name-brand select,
+.price-date input,
+.lp-ram input {
+  width: 25rem;
+  height: 3.75rem;
+  padding-left: 8px;
+}
+.lp-cpu input,
+.lp-cpu select {
+  width: 17rem;
+  height: 3.75rem;
+  padding-left: 8px;
+  margin-top: 0.5rem;
+}
+
+.name-brand input,
+.lp-cpu input,
+.price-date input,
+.lp-ram input {
+  border: 1.8px solid #8ac0e2;
+  outline: none;
+  border-radius: 8px;
+}
+
+.name-brand select,
+.lp-cpu select {
+  background-color: #ebebeb;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+.hr {
+  margin-top: 5%;
+}
+
+.ram-type {
+  width: 25rem;
+  height: 3.75rem;
+}
+
+.condition {
+  display: block;
+  margin-top: 5%;
+  align-items: center;
+}
+
+.name-brand input,
+.price-date input,
+.lp-ram input {
+  margin-top: 0.5rem;
+}
+
+.ram-type,
+.condition {
+  height: 106px;
+}
+
+.ram-type input,
+.condition input {
+  margin-top: 2rem;
+  size: 25px;
+}
+
+span {
+  margin-left: 10px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.page-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 18px;
+  color: #62a1eb;
+  letter-spacing: 0.08em;
+  margin-top: 1rem;
+}
+
+.next-btn {
+  align-items: center;
+  width: 13.2rem;
+  height: 3.75rem;
+  background-color: #62a1eb;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.page-hr {
+  width: 13.7%;
+  margin-left: 53.25%;
+  margin-top: 0.5%;
+  border: 1px solid black;
+}
+
+#preview {
+  width: 100%;
+  height: 100%;
+}

@@ -2,6 +2,8 @@
   font-family: HelveticaNeue;
   src: url(./asset/fonts/HelveticaNeue.ttc) format("ttc");
 }
+/* TO DOO */
+/* make page not scrollable */
 
 @media screen and (min-width: 845px) {
   .img-mobile {

@@ -17,7 +17,7 @@ async function getPositions() {
   getSelect.forEach(function (option) {
     option.addEventListener("change", async function (e) {
       var target = e.target.id;
-      selected = e.target.options[e.target.selectedIndex].id;
+      let selected = e.target.options[e.target.selectedIndex].id;
       const response = await fetch(
         "https://pcfy.redberryinternship.ge/api/positions"
       );
@@ -29,7 +29,7 @@ async function getPositions() {
           optionCreation.id = "option" + char.team_id;
           document.getElementById("positions").appendChild(optionCreation);
         } else {
-          element = document.getElementById("option" + char.team_id);
+          let element = document.getElementById("option" + char.team_id);
           if (element !== null) {
             element.remove();
           }
