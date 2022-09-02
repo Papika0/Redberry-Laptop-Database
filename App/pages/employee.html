@@ -30,7 +30,6 @@
             id="Name"
             placeholder="სახელი"
             onkeyup="setInput(this.id ,this.value)"
-            onload="getInput(this.id)"
           />
           <h5 id="name-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
         </div>
@@ -43,7 +42,6 @@
             id="Lastname"
             placeholder="გვარი"
             onkeyup="setInput(this.id ,this.value)"
-            onload="getInput(this.id)"
           />
           <h5 id="lastname-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
         </div>
@@ -54,7 +52,6 @@
           class="teams"
           id="teams"
           onchange="setInput(this.id ,this.value)"
-          onload="getInput(this.id)"
         >
           <option hidden selected>თიმი</option>
         </select>
@@ -62,11 +59,7 @@
       </div>
 
       <div class="positions">
-        <select
-          id="positions"
-          onchange="setInput(this.id ,this.value)"
-          onload="getInput(this.id)"
-        >
+        <select id="positions" onchange="setInput(this.id ,this.value)">
           <option hidden selected>პოზიცია</option></select
         ><br />
       </div>
@@ -79,7 +72,6 @@
           id="Email"
           placeholder="example@redberry.ge"
           onkeyup="setInput(this.id ,this.value)"
-          onload="getInput(this.id)"
         />
         <h5 id="email-h5">უნდა მთავრდებოდეს @redberry.ge-ით</h5>
       </div>
@@ -92,7 +84,6 @@
           id="Phone"
           placeholder="+995 598 00 00 00"
           onkeyup="setInput(this.id ,this.value)"
-          onload="getInput(this.id)"
         />
         <h5 id="phone-h5">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</h5>
       </div>
@@ -103,8 +94,8 @@
     <div class="logo">
       <img src="../../assets/images/redberry-icon.svg" />
     </div>
-    <script src="../script/getData.js"></script>
-    <script src="../script/validations.js"></script>
-    <script src="../script/storageData.js"></script>
+    <script type="text/javascript" src="../script/getData.js"></script>
+    <script type="text/javascript" src="../script/validations.js"></script>
+    <script type="text/javascript" src="../script/storageData.js"></script>
   </body>
 </html>

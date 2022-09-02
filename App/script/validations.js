@@ -21,6 +21,7 @@ const lastNameLabel = document.getElementById("lastname-label");
 const emailLabel = document.getElementById("email-label");
 const phoneLabel = document.getElementById("phone-label");
 
+/* Preventing the default action of the button. */
 nextBtn.addEventListener("click", (e) => {
   if (!validation()) {
     e.preventDefault();
@@ -29,6 +30,18 @@ nextBtn.addEventListener("click", (e) => {
   }
 });
 
+/**
+ * If the input value matches the regex and is at least 2 characters long, then the header text is set
+ * to "მინიმუმ 2 სიმბოლო, ქართული ასოები", the header color is set to black, the input border color is
+ * set to black, and the label color is set to black.
+ *
+ * If the input value is less than 2 characters long and matches the regex, then the header text is set
+ * to " შეიყვანეთ მი
+ * @param input - the input element
+ * @param header - the element that will display the error message
+ * @param label - the label of the input
+ * @returns true or false.
+ */
 function checkInputs(input, header, label) {
   if (input.value.match(regexGeo) && input.value.length >= 2) {
     header.innerText = "მინიმუმ 2 სიმბოლო, ქართული ასოები";
@@ -56,6 +69,12 @@ function checkInputs(input, header, label) {
   }
 }
 
+/**
+ * If the field value matches the regex, then change the border color to blue, change the label color
+ * to black, and change the h5 color to black. Otherwise, change the border color to red, change the
+ * label color to red, and change the h5 color to red.
+ * @returns true or false.
+ */
 function checkTeams() {
   if (teams.value !== "თიმი") {
     teams.classList.remove("red-border");
@@ -86,6 +105,10 @@ function checkRegex(field, label, h5, regex) {
     h5.style.color = "red";
   }
 }
+/**
+ * If all the inputs are valid, return true.
+ * @returns the value of the variable count.
+ */
 
 function validation() {
   let count = 0;

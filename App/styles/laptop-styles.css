@@ -6,7 +6,7 @@
 @media screen and (min-width: 845px) {
   .section {
     background-color: white;
-    margin: 2.2% 18% 10%;
+    margin: 2.2% 18% 0;
   }
 
   .form {
@@ -33,7 +33,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   background-color: #f7f7f7;
 }
 
@@ -57,8 +57,9 @@ body {
 
 section {
   background-color: white;
-  margin: 2.2% 18% 10%;
-  height: 1550px;
+  margin: 2.2% 18% 0;
+  height: fit-content;
+  padding-bottom: 3%;
 }
 
 form {
@@ -126,6 +127,7 @@ form {
   font-size: 18px;
 }
 h5 {
+  margin-top: 7px;
   font-weight: 300;
   font-size: 14px;
   color: #2e2e2e;
@@ -286,4 +288,12 @@ span {
   cursor: pointer;
   font-size: 20px;
   color: white;
+}
+
+/* // TO DOO GEL LOGO  */
+
+.logo {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }

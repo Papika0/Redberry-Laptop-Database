@@ -22,7 +22,8 @@
         <form class="form">
 
             <div class="upload-img">
-                <input type="file" accept="image/*" id="upload" onchange="loadPhoto(event)" >
+                <input type="file" accept="image/*" id="image" onchange="loadPhoto(event)" required>
+                
                 <img id="preview">
                 <h4 class="laptop-h4" >ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h4>
             </div>
@@ -30,34 +31,53 @@
                <img src="../../assets/images/upload-success.png" class="retry-img">
                  <p class="retry-name">1</p>
                   <p class="retry-size">2</p>
-                   <input type="file" accept="image/*" id="upload" class="retry-upload" onchange="loadPhoto(event)"/>
+                   <input type="file" accept="image/*" id="image" class="retry-upload" onchange="loadPhoto(event)"
+                      />
             </div>
 
                 <div class="name-brand">
                     <div class="laptop-name">
                     <label  class="label">ლეპტოპის სახელი</label></br>
-                    <input placeholder="HP">
+                    <input placeholder="HP" required="required" id="laptop-name"
+                     oninvalid="this.setCustomValidity('შეიყვანე ლეპტოპის სახელი')" 
+                     onchange="this.setCustomValidity('')"
+                     onkeyup="setInput(this.id ,this.value)"
+                     > 
                     <h5 >ლათინური ასოები, ციფრები, !@#$%%^*()_+=</h5>
                 </div>
 
-                    <select class="laptop-brand" id="brands" >
-                        <option disabled selected hidden>ლეპტოპის ბრენდი</option>
+                    <select class="laptop-brand" id="brands" required
+                        onchange="setInput(this.id ,this.value)"
+                              >
+                        <option disabled selected hidden value="">ლეპტოპის ბრენდი</option>
                     </select>
                 </div>
                 <hr class="hr">
 
                 <div class="lp-cpu">
-                    <select class="cpu-option" id="cpus">
-                        <option disabled selected hidden>CPU</option>
+                    <select class="cpu-option" id="cpus" required
+                        onchange="setInput(this.id ,this.value)"
+                              >
+                        <option disabled selected hidden value="">CPU</option>
                     </select>
                     <div class="cpu-cores">
                         <label class="label">CPU-ს ბირთვი</label></br>
-                        <input type="number" placeholder="14" >
+                        <input type="number" placeholder="14" required="required" id="cpu-cores"
+                        onkeypress="return /[0-9]/i.test(event.key)"
+                        oninvalid="this.setCustomValidity('შეიყვანე პროცესორის ბირთვების რაოდენობა')"
+                        onchange="this.setCustomValidity('')"
+                        onkeyup="setInput(this.id ,this.value)"
+                             >
                         <h5 >მხოლოდ ციფრები</h5>
                     </div>
                     <div class="cpu-threads">
                         <label class="label">CPU-ს ნაკადი</label></br>
-                        <input type="number" placeholder="365" >
+                        <input type="number" placeholder="365" required="required" id="cpu-threads"
+                        onkeypress="return /[0-9]/i.test(event.key)"
+                        oninvalid="this.setCustomValidity('შეიყვანე პროცესორის ნაკადების რაოდენობა')" 
+                        onchange="this.setCustomValidity('')"
+                        onkeyup="setInput(this.id ,this.value)"
+                              >
                         <h5 >მხოლოდ ციფრები</h5>
                     </div>
                 </div>
@@ -65,15 +85,20 @@
                 <div class="lp-memory">
                     <div class="lp-ram">
                         <label class="label">ლეპტოპის RAM(GB)</label></br>
-                        <input type="number" placeholder="16" >
+                        <input type="number" placeholder="16" required="required" id="laptop-ram"
+                        onkeypress="return /[0-9]/i.test(event.key)"
+                        oninvalid="this.setCustomValidity('შეიყვანე ლეპტოპის RAM')" 
+                        onchange="this.setCustomValidity('')"
+                        onkeyup="setInput(this.id ,this.value)"
+                              >
                         <h5 >მხოლოდ ციფრები</h5>
                     </div>
                     <div class="ram-type">
                     <label for="type" class="label">მეხსიერების ტიპი</label></br>
-                        <label ><input type="radio" name="type"><span>SDD</span> 
+                        <label ><input type="radio" required id="SSD" name="type" onclick="radioOnClickMemory(this.id)"><span>SDD</span> 
                     </label>
                     <label >
-                        <input style="margin-left: 2rem;" type="radio" name="type"><span>HDD</span> 
+                        <input style="margin-left: 2rem;" id="HDD" type="radio" name="type" onclick="radioOnClickMemory(this.id)"><span>HDD</span> 
                     </label>
                     </div>
                 </div>
@@ -82,32 +107,45 @@
                 <div class="price-date">
                     <div class="purchase-date" style="margin-bottom: 17px">
                         <label class="label">შეძენის რიცხვი(არჩევითი)</label></br>
-                        <input type="date"  >
+                        
+                        <input type="text" placeholder="დდ / თთ / წწწწ" id="purchase-date" 
+                        onfocus="(this.type='date')"  
+                        onchange="setInput(this.id ,this.value)"
+                               >
                     </div>
                     <div class="lp-price">
                         <label class="label">ლეპტოპის ფასი</label></br>
-                        <input type="number" placeholder="0000" >
+                            <input type="number" placeholder="0000" required="required" id="laptop-price"
+                            onkeypress="return /[0-9]/i.test(event.key)"
+                            oninvalid="this.setCustomValidity('შეიყვანე ლეპტოპის ფასი')" 
+                            onchange="this.setCustomValidity('')" 
+                            onkeyup="setInput(this.id ,this.value)"
+                                  >
                         <h5>მხოლოდ ციფრები</h5>
                     </div>
                 </div>
 
                 <div class="condition">
                     <label for="condition"  class="label">ლეპტოპის მდგომარეობა</label> <br>
-                   <label > 
-                        <input type="radio" name="condition" ><span>ახალი</span> 
+                   <label  > 
+                        <input type="radio" id="new" name="condition" required onclick="radioOnClickCondition(this.id)"><span >ახალი</span> 
                     </label>
                     <label >
-                        <input style="margin-left: 2rem;" type="radio" name="condition" ><span>მეორადი</span> 
+                        <input style="margin-left: 2rem;" type="radio" name="condition" id="used" onclick="radioOnClickCondition(this.id)" ><span>მეორადი</span> 
                     </label>
                 </div>
                 <div class="page-buttons">
                     <a href="/App/pages/employee.html" class="back-btn">უკან</a>
-                    <button class="next-btn">დამახსოვრება</button>
+                    <button type="submit" class="next-btn" id="Submit">დამახსოვრება</button>
                 </div>
             
         </form>
     </section>
-    <script  src="../script/laptop.js"></script>
-
+      <div class="logo">
+      <img src="../../assets/images/redberry-icon.svg" />
+    </div>
+    <script type="text/javascript" src="../script/getData.js"></script>
+    <script type="text/javascript" src="../script/laptop.js"></script>
+    <script type="text/javascript" src="../script/storageData.js"></script>
   </body>
 </html>
