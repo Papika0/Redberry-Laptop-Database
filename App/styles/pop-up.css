@@ -1,0 +1,139 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(../../assets/fonts/HelveticaNeue.ttc);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: HelveticaNeue;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10% 7%;
+  }
+
+  img {
+    margin-top: auto;
+    margin-left: 20%;
+  }
+
+  p {
+    max-width: 60%;
+    color: #292929;
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 170%;
+    text-align: center;
+  }
+
+  .pop-up-btns {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: auto;
+  }
+
+  .home-link {
+    font-size: 20px;
+    color: #0089a7;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button {
+    width: 100%;
+    padding: 18px 60px;
+    text-align: center;
+    background: #62a1eb;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    transition: 200ms ease;
+    background: #317ad0;
+  }
+
+  .button:active {
+    background: #1a5dab;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a4a4a;
+  }
+
+  main {
+    height: fit-content;
+    width: 44.1%;
+    border-radius: 8px;
+    background: #fff;
+    text-align: center;
+  }
+
+  p {
+    font-size: 25px;
+    margin-bottom: 80px;
+  }
+
+  .pop-up-btns {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: auto;
+  }
+
+  .home-link {
+    font-size: 20px;
+    color: #0089a7;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button {
+    width: 35.06%;
+    padding: 18px 60px;
+    text-align: center;
+    background: #62a1eb;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    transition: 200ms ease;
+    background: #317ad0;
+  }
+
+  .button:active {
+    background: #1a5dab;
+  }
+}

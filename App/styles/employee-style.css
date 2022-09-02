@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: HelveticaNeue;
-  src: url(./asset/fonts/HelveticaNeue.ttc) format("ttc");
+  src: url(../../assets/fonts/HelveticaNeue.ttc);
 }
 
 * {
