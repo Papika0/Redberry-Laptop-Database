@@ -1,0 +1,43 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(../../assets/fonts/HelveticaNeue.ttc);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: HelveticaNeue;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+main {
+  padding: 30px 16px 170px;
+}
+
+p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 34px;
+}
+.arrow {
+  margin-bottom: 100px;
+}
+
+.header {
+  font-size: 34px;
+}
+
+.arrow a {
+  left: 70px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  width: 53px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
