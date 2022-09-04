@@ -46,7 +46,11 @@ function uploadRetryCreate(name, size) {
 
 /* Preventing the default action of the submit button and calling the postData function. */
 submit.addEventListener("click", (e) => {
-  postData();
+  if (!postData()) {
+    e.preventDefault();
+  } else {
+    location.href = "../pages/form-success.html";
+  }
 });
 
 // TOO DOO Re Upload image Post
@@ -89,6 +93,8 @@ async function postData() {
   );
   if (response.status == 200) {
     localStorage.clear();
-    window.location.href = "../index.html";
+    return true;
+  } else {
+    console.log("error");
   }
 }
