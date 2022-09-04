@@ -70,8 +70,12 @@ input {
 }
 
 .name,
-.lastname {
+.lastname,
+.lastname-invalid {
   display: inline-block;
+}
+.lastname-invalid {
+  margin-left: 1rem;
 }
 .lastname {
   margin-left: 4rem;

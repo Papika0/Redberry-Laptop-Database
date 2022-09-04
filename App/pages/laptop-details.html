@@ -4,7 +4,90 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../assets/images/redberry-icon.svg" />
+    <link rel="stylesheet" href="../styles/laptop-details.css" />
     <title>Laptop Details</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <div class="header">
+        <a href="../pages/laptop-database.html""><img class="desktop" src="../../assets/images/Back-arrow.svg"> 
+         <img class="mobile" src="../../assets/images/back-mobile.svg" >
+        </a>
+        <p>ᲚᲔᲞᲢᲝᲞᲘᲡ ᲘᲜᲤᲝ</p>
+      </div>       
+      <div class="employee-data">
+            <div class="datas-section">
+                <div class="data-group">
+                     <img id="laptop-img" class="laptop-img">
+                    <ul class="data-group-fields">
+                        <li>სახელი:</li>
+                        <li>თიმი:</li>
+                        <li>პოზიცია:</li>
+                        <li>მეილი:</li>
+                        <li>ტელ. ნომერი:</li>
+                    </ul>
+                    <ul class="data-group-values">
+                        <li id="name"></li>
+                        <li id="team"></li>
+                        <li id="position"></li>
+                        <li id="email"></li>
+                        <li id="phone"></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="data-section">
+                <div class="data-group">
+                    <ul class="data-group-fields">
+                        <li>ლეპტოპის სახელი:</li>
+                        <li>ლეპტოპის ბრენდი:</li>
+                        <li>RAM:</li>
+                        <li>მეხსიერების ტიპი:</li>
+                    </ul>
+                    <ul class="data-group-values">
+                        <li id="laptop-name"></li>
+                        <li id="laptop-brand"></li>
+                        <li id="ram"></li>
+                        <li id="memory-type"></li>
+                    </ul>
+                </div>
+                <div class="data-group">
+                    <ul class="data-group-fields">
+                        <li>CPU:</li>
+                        <li>CPU-ს ბირთვი: </li>
+                        <li>CPU-ს ნაკადი:</li>
+                    </ul>
+                    <ul class="data-group-values">
+                        <li id="cpu"></li>
+                        <li id="cpu-cores"></li>
+                        <li id="cpu-threads"></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="data-section ">
+                <div class="data-group">
+                    <ul class="data-group-fields">
+                        <li>მდგომარეობა: </li>
+                        <li>ლეპტოპის ფასი:</li>
+                    </ul>
+                    <ul class="data-group-values">
+                        <li id="condition"></li>
+                        <li id="laptop-price"></li>
+                    </ul>
+                </div>
+                <div class="data-group">
+                    <ul class="data-group-fields">
+                        <li>შევსების რიცხვი:</li>
+                    </ul>
+                    <ul class="data-group-values">
+                        <li id="date"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>        
+    </main>
+    <script src="../script/latopDetails.js"></script>
+  </body>
 </html>

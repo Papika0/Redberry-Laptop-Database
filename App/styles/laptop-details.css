@@ -1,0 +1,173 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(../../assets/fonts/HelveticaNeue.ttc);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: HelveticaNeue;
+}
+body {
+  background-color: #f2f2f2;
+}
+
+.laptop-img {
+  width: 100%;
+}
+
+.data-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.data-group {
+  display: flex;
+  width: 100%;
+  max-width: 577px;
+  max-height: 342px;
+  gap: 80px;
+}
+
+.data-group-fields {
+  list-style: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 178%;
+  color: #2e2e2e;
+  padding-right: 35px;
+  width: 100%;
+}
+
+.data-group-fields li {
+  padding: 15px 0;
+}
+
+.data-group-values {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 178%;
+  color: #2e2e2e;
+  list-style: none;
+  width: 100%;
+}
+
+.data-group-values li {
+  padding: 15px 0;
+  color: #797979;
+  font-weight: 400;
+}
+
+.below-data {
+  align-items: flex-start !important;
+  gap: 0 !important;
+}
+
+li {
+  white-space: nowrap;
+  list-style-type: none;
+  font-size: 22px;
+  line-height: 27px;
+}
+
+hr {
+  margin: 40px 0;
+  background: #a5a5a5;
+  height: 0.6px;
+}
+
+@media screen and (min-width: 850px) {
+  .header {
+    padding-top: 3%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5%;
+    align-items: baseline;
+  }
+  .header a {
+    padding-left: 5%;
+  }
+
+  .header p {
+    padding-left: 34%;
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: 0.02em;
+  }
+  .mobile {
+    display: none;
+  }
+  .laptop-img {
+    max-width: 577px;
+  }
+
+  .employee-data {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+  }
+
+  .datas-section {
+    gap: 70px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .data-group {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .data-group-fields {
+    font-size: 22px;
+    line-height: 50px;
+    color: #2e2e2e;
+    list-style: none;
+    font-weight: 600;
+    padding-right: 35px;
+  }
+
+  .ldata-group-values {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 50px;
+    color: #2e2e2e;
+    list-style: none;
+  }
+
+  hr {
+    margin: 40px 0;
+    background: #a5a5a5;
+    height: 0.6px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  main {
+    padding: 0 4% 0;
+  }
+  .header {
+    padding-top: 9%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15%;
+    align-items: baseline;
+  }
+
+  .header p {
+    padding-left: 23%;
+    font-weight: 700;
+    font-size: 150%;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+  }
+  .desktop {
+    display: none;
+  }
+}

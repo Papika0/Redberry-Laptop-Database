@@ -21,7 +21,8 @@ var loadPhoto = function (event) {
     localStorage.setItem("image", event.target.files[0]);
     changesOnUpload(event);
   };
-
+  let imageImg = document.getElementById("invalid-vector3");
+  imageImg.style.display = "none";
   reader.readAsDataURL(event.target.files[0]);
 };
 
@@ -44,22 +45,13 @@ function uploadRetryCreate(name, size) {
   retrySize.innerText = size;
 }
 
-/* Preventing the default action of the submit button and calling the postData function. */
-submit.addEventListener("click", (e) => {
-  if (!postData()) {
-    e.preventDefault();
-  } else {
-    location.href = "../pages/form-success.html";
-  }
-});
-
 // TOO DOO Re Upload image Post
 
 /**
  * It takes the data from the local storage and sends it to the server.
  * </code>
  */
-async function postData() {
+function postData() {
   let image = document.getElementById("image").files[0];
   const formData = new FormData();
   formData.append("name", localStorage.getItem("Name"));
@@ -78,23 +70,166 @@ async function postData() {
   formData.append("laptop_ram", localStorage.getItem("laptop-ram"));
   formData.append("laptop_hard_drive_type", localStorage.getItem("ram-type"));
   formData.append("laptop_state", localStorage.getItem("condition"));
-  formData.append(
-    "laptop_purchase_date",
-    localStorage.getItem("purchase-date")
-  );
+  if (localStorage.getItem("purchase-date")) {
+    formData.append(
+      "laptop_purchase_date",
+      localStorage.getItem("purchase-date")
+    );
+  }
   formData.append("laptop_price", localStorage.getItem("laptop-price"));
-  formData.append("token", "d1c0af8d3c1a6e0d9be008395345f589");
-  var response = await fetch(
-    "https://pcfy.redberryinternship.ge/api/laptop/create",
-    {
-      method: "POST",
-      body: formData,
+  formData.append("token", "86cb9de5c6639a9267f5e227ae047452");
+
+  fetch("https://pcfy.redberryinternship.ge/api/laptop/create", {
+    method: "POST",
+    body: formData,
+  }).then((response) => {
+    console.log(response.status);
+    if (response.status == 200) {
+      localStorage.clear();
+      return (window.location.href = "../pages/form-success.html");
+    } else {
+      console.log("error");
     }
-  );
-  if (response.status == 200) {
-    localStorage.clear();
-    return true;
+  });
+}
+
+/* Preventing the default action of the submit button and calling the postData function. */
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  checkAll();
+  if (document.querySelectorAll(".red").length == 0) {
+    postData();
+  }
+});
+
+/**
+ * It calls all the other functions that check the form.
+ */
+function checkAll() {
+  checkLpName();
+  checkNumber("cpu-cores");
+  checkNumber("cpu-threads");
+  checkNumber("laptop-ram");
+  checkNumber("laptop-price");
+  checkSelect("brands");
+  checkSelect("cpus");
+  radioValState();
+  radioValType();
+  checkImageUpload();
+}
+/**
+ * If the value of the input field matches the regular expression, remove the red class from the parent
+ * element and the next sibling element, and change the border color of the input field to blue.
+ * Otherwise, add the red class to the parent element and the next sibling element, and change the
+ * border color of the input field to red.
+ */
+
+function checkLpName() {
+  let nameRegex = /^[a-zA-Z0-9_.-\s]+$/;
+  let name = document.getElementById("laptop-name");
+  if (nameRegex.test(name.value)) {
+    name.parentElement.classList.remove("red");
+    name.style.border = "1.8px solid #8ac0e2";
+    name.nextElementSibling.classList.remove("red");
   } else {
-    console.log("error");
+    name.parentElement.classList.add("red");
+    name.style.border = "1.8px solid red";
+    name.nextElementSibling.classList.add("red");
+  }
+}
+
+/**
+ * If the value of the input element is a number, remove the red class from the parent element and the
+ * next sibling element. Otherwise, add the red class to the parent element and the next sibling
+ * element.
+ * @param element - the id of the input field
+ */
+function checkNumber(element) {
+  let numberRegex = /^[0-9]+$/;
+  let number = document.getElementById(element);
+  if (numberRegex.test(number.value)) {
+    number.parentElement.classList.remove("red");
+    number.style.border = "1.8px solid #8ac0e2";
+    number.nextElementSibling.classList.remove("red");
+  } else {
+    number.parentElement.classList.add("red");
+    number.style.border = "1.8px solid red";
+    number.nextElementSibling.classList.add("red");
+  }
+}
+
+/**
+ * If the selected option is not the first option, remove the red border and red text from the first
+ * option. If the selected option is the first option, add a red border to the select element and add
+ * red text to the first option.
+ * </code>
+ * @param element - the id of the select element
+ */
+function checkSelect(element) {
+  const selection = document.getElementById(element);
+  if (selection.options[selection.selectedIndex].value != "") {
+    selection.style.border = "none";
+    selection.options[0].classList.remove("red");
+  } else {
+    selection.options[0].classList.add("red");
+    selection.style.border = "1.8px solid red";
+  }
+}
+
+/**
+ * If the radio buttons are checked, remove the red class from the label and hide the image. If the
+ * radio buttons are not checked, add the red class to the label and show the image
+ */
+function radioValState() {
+  let radio = document.getElementsByName("condition");
+  let radioLabel = document.getElementById("radio-label");
+  let radioImg = document.getElementById("invalid-vector");
+
+  if (radio[0].checked || radio[1].checked) {
+    radioLabel.classList.remove("red");
+    radioImg.style.visibility = "hidden";
+  } else {
+    radioLabel.classList.add("red");
+    radioImg.style.visibility = "visible";
+  }
+}
+
+/**
+ * If the radio button is checked, remove the red class from the label and hide the image. If the radio
+ * button is not checked, add the red class to the label and show the image.
+ * </code>
+ */
+function radioValType() {
+  let radio = document.getElementsByName("type");
+  let radioLabel = document.getElementById("ram-label");
+  let radioImg = document.getElementById("invalid-vector2");
+
+  if (radio[0].checked || radio[1].checked) {
+    radioLabel.classList.remove("red");
+    radioImg.style.visibility = "hidden";
+  } else {
+    radioLabel.classList.add("red");
+    radioImg.style.visibility = "visible";
+  }
+}
+
+/**
+ * If the image file is uploaded, remove the red class from the label. If the image file is not
+ * uploaded, display the invalid image, add a red outline to the image border, and add the red class to
+ * the label.
+ * </code>
+ */
+function checkImageUpload() {
+  let image = document.getElementById("image");
+  let imageLabel = document.querySelector(".laptop-h4");
+  let imageBorder = document.querySelector(".upload-img");
+  let imageImg = document.getElementById("invalid-vector3");
+  console.log(imageBorder);
+  if (image.files[0]) {
+    imageLabel.classList.remove("red");
+  } else {
+    imageImg.style.display = "inline";
+    imageBorder.style.outline = "2px dashed red";
+    imageLabel.classList.add("red");
   }
 }

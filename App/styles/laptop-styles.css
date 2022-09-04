@@ -297,3 +297,21 @@ span {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+
+.red {
+  color: red;
+}
+
+#invalid-vector,
+#invalid-vector2 {
+  margin-left: 0.5rem;
+  visibility: hidden;
+}
+
+#invalid-vector3 {
+  margin-left: 12.5rem;
+  margin-top: 3rem;
+  width: 38px;
+  height: 34px;
+  display: none;
+}

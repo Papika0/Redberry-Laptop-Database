@@ -1,7 +1,7 @@
 /* It's fetching data from the given url and then it's creating a list item for each object in the
 data. */
 fetch(
-  "https://pcfy.redberryinternship.ge/api/laptops?token=d1c0af8d3c1a6e0d9be008395345f589"
+  "https://pcfy.redberryinternship.ge/api/laptops?token=86cb9de5c6639a9267f5e227ae047452"
 )
   .then((response) => response.json())
   .then((data) => {
@@ -52,6 +52,7 @@ function createElement(element, text, className, id, href, source, saveId) {
     elementDetails.addEventListener("click", function () {
       const selectedId = elementDetails.parentElement.closest("li").id;
       localStorage.setItem("selectedId", selectedId);
+      console.log(localStorage.getItem("selectedId"));
     });
   }
   return elementDetails;

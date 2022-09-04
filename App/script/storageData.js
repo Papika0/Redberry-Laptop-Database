@@ -44,6 +44,7 @@ function checkSelection(char) {
  */
 function radioOnClickCondition(value) {
   localStorage.setItem("condition", value);
+  console.log(localStorage.getItem("condition"));
 }
 
 function radioOnClickMemory(value) {
@@ -56,8 +57,8 @@ function radioOnClickMemory(value) {
  */
 function radioCheck() {
   if (
-    document.getElementById("condition") != null ||
-    document.getElementById("ram-type") != null
+    document.querySelector(".state") != null ||
+    document.querySelector(".ram") != null
   ) {
     if (
       localStorage.getItem("condition") != undefined ||

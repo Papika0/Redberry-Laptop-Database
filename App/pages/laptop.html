@@ -19,12 +19,13 @@
     </div>
 <hr class="page-hr">
     <section class="section">
-        <form class="form">
+        <form class="form"  >
 
             <div class="upload-img">
                 <input type="file" accept="image/*" id="image" onchange="loadPhoto(event)" required>
                 
                 <img id="preview">
+                <img id="invalid-vector3" src="../../assets/images/invalid-vector.svg" alt="">
                 <h4 class="laptop-h4" >ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h4>
             </div>
             <div class="upload-retry">
@@ -37,13 +38,13 @@
 
                 <div class="name-brand">
                     <div class="laptop-name">
-                    <label  class="label">ლეპტოპის სახელი</label></br>
+                    <label  class="label" id="lp-name-label">ლეპტოპის სახელი</label></br>
                     <input placeholder="HP" required="required" id="laptop-name"
                      oninvalid="this.setCustomValidity('შეიყვანე ლეპტოპის სახელი')" 
                      onchange="this.setCustomValidity('')"
                      onkeyup="setInput(this.id ,this.value)"
                      > 
-                    <h5 >ლათინური ასოები, ციფრები, !@#$%%^*()_+=</h5>
+                    <h5 id="lp-name-h5">ლათინური ასოები, ციფრები, !@#$%%^*()_+=</h5>
                 </div>
 
                     <select class="laptop-brand" id="brands" required
@@ -94,11 +95,11 @@
                         <h5 >მხოლოდ ციფრები</h5>
                     </div>
                     <div class="ram-type">
-                    <label for="type" class="label">მეხსიერების ტიპი</label></br>
-                        <label ><input type="radio" required id="SSD" name="type" onclick="radioOnClickMemory(this.id)"><span>SDD</span> 
+                    <label id="ram-label" for="type" class="label">მეხსიერების ტიპი</label> <img id="invalid-vector2" src="../../assets/images/invalid-vector.svg" alt=""></br>
+                        <label ><input type="radio" required id="SSD" name="type" class="ram" onclick="radioOnClickMemory(this.id)"><span>SDD</span> 
                     </label>
                     <label >
-                        <input style="margin-left: 2rem;" id="HDD" type="radio" name="type" onclick="radioOnClickMemory(this.id)"><span>HDD</span> 
+                        <input style="margin-left: 2rem;" id="HDD" type="radio" name="type" class="ram" onclick="radioOnClickMemory(this.id)"><span>HDD</span> 
                     </label>
                     </div>
                 </div>
@@ -126,17 +127,17 @@
                 </div>
 
                 <div class="condition">
-                    <label for="condition"  class="label">ლეპტოპის მდგომარეობა</label> <br>
+                    <label for="condition"  class="label" id="radio-label">ლეპტოპის მდგომარეობა</label> <img id="invalid-vector" src="../../assets/images/invalid-vector.svg" alt=""> <br>
                    <label  > 
-                        <input type="radio" id="new" name="condition" required onclick="radioOnClickCondition(this.id)"><span >ახალი</span> 
+                        <input type="radio" id="new" name="condition" class="state" required onclick="radioOnClickCondition(this.id)"><span >ახალი</span> 
                     </label>
                     <label >
-                        <input style="margin-left: 2rem;" type="radio" name="condition" id="used" onclick="radioOnClickCondition(this.id)" ><span>მეორადი</span> 
+                        <input style="margin-left: 2rem;" type="radio" name="condition" class="state" id="used" onclick="radioOnClickCondition(this.id)" ><span>მეორადი</span> 
                     </label>
                 </div>
                 <div class="page-buttons">
                     <a href="/App/pages/employee.html" class="back-btn">უკან</a>
-                    <button type="submit" class="next-btn" id="Submit">დამახსოვრება</button>
+                    <button class="next-btn" id="Submit" >დამახსოვრება</button>
                 </div>
             
         </form>
