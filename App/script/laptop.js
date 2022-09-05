@@ -20,10 +20,10 @@ var loadPhoto = function (event) {
   reader.onload = function () {
     var output = document.getElementById("preview");
     output.src = reader.result;
-    localStorage.setItem("image", event.target.files[0]);
-    localStorage.setItem("image-onload", reader.result);
-    localStorage.setItem("image-name", event.target.files[0].name);
-    localStorage.setItem("image-size", event.target.files[0].size);
+    // localStorage.setItem("image", event.target.files[0]);
+    // localStorage.setItem("image-onload", reader.result);
+    // localStorage.setItem("image-name", event.target.files[0].name);
+    // localStorage.setItem("image-size", event.target.files[0].size);
     changesOnUpload(event);
   };
   let imageImg = document.getElementById("invalid-vector3");
@@ -31,30 +31,31 @@ var loadPhoto = function (event) {
   reader.readAsDataURL(event.target.files[0]);
 };
 
+//TO DOO had problem fetching image from local storage
 /**
  * If the image, name, and size are stored in local storage, then display the image, hide the upload
  * button, and display the retry button.
  */
-function imageOnload() {
-  let image = localStorage.getItem("image-onload");
-  let name = localStorage.getItem("image-name");
-  let size = localStorage.getItem("image-size");
+// function imageOnload() {
+//   let image = localStorage.getItem("image-onload");
+//   let name = localStorage.getItem("image-name");
+//   let size = localStorage.getItem("image-size");
 
-  if (image && name && size) {
-    img.src = image;
-    img.style.display = "block";
-    uploadH5.style.display = "none";
-    mobileImg.style.display = "none";
-    upload.style.display = "none";
-    uploadBorder.style.outline = "none";
-    uploadH4.style.display = "none";
-    uploadRetry.style.display = "block";
-    uploadRetryCreate(
-      name,
-      Math.round((size / 1024 / 1024) * 100) / 100 + " mb"
-    );
-  }
-}
+//   if (image && name && size) {
+//     img.src = image;
+//     img.style.display = "block";
+//     uploadH5.style.display = "none";
+//     mobileImg.style.display = "none";
+//     upload.style.display = "none";
+//     uploadBorder.style.outline = "none";
+//     uploadH4.style.display = "none";
+//     uploadRetry.style.display = "block";
+//     uploadRetryCreate(
+//       name,
+//       Math.round((size / 1024 / 1024) * 100) / 100 + " mb"
+//     );
+//   }
+// }
 
 function changesOnUpload(event) {
   let fileName = event.target.files[0].name;
@@ -82,7 +83,9 @@ function uploadRetryCreate(name, size) {
  * </code>
  */
 function postData() {
+  let retryImage = document.querySelector(".retry-upload").files[0];
   let image = document.getElementById("image").files[0];
+
   const formData = new FormData();
   formData.append("name", localStorage.getItem("Name"));
   formData.append("surname", localStorage.getItem("Lastname"));
@@ -92,7 +95,11 @@ function postData() {
   formData.append("email", localStorage.getItem("Email"));
 
   formData.append("laptop_name", localStorage.getItem("laptop-name"));
-  formData.append("laptop_image", image);
+  if (retryImage) {
+    formData.append("laptop_image", retryImage);
+  } else {
+    formData.append("laptop_image", image);
+  }
   formData.append("laptop_brand_id", localStorage.getItem("brand_id"));
   formData.append("laptop_cpu", localStorage.getItem("cpus"));
   formData.append("laptop_cpu_cores", localStorage.getItem("cpu-cores"));
