@@ -2,6 +2,8 @@ const img = document.getElementById("preview");
 const upload = document.getElementById("image");
 const uploadBorder = document.querySelector(".upload-img");
 const uploadH4 = document.querySelector(".laptop-h4");
+const uploadH5 = document.querySelector(".laptop-h5");
+const mobileImg = document.querySelector(".mobile-img");
 const uploadRetry = document.querySelector(".upload-retry");
 const submit = document.getElementById("Submit");
 
@@ -31,6 +33,8 @@ function changesOnUpload(event) {
   let fileSize =
     Math.round((event.target.files[0].size / 1024 / 1024) * 100) / 100 + " mb";
   img.style.display = "block";
+  uploadH5.style.display = "none";
+  mobileImg.style.display = "none";
   upload.style.display = "none";
   uploadBorder.style.outline = "none";
   uploadH4.style.display = "none";
@@ -222,14 +226,19 @@ function radioValType() {
 function checkImageUpload() {
   let image = document.getElementById("image");
   let imageLabel = document.querySelector(".laptop-h4");
+  let mobileImageLabel = document.querySelector(".laptop-h5");
   let imageBorder = document.querySelector(".upload-img");
   let imageImg = document.getElementById("invalid-vector3");
   console.log(imageBorder);
   if (image.files[0]) {
     imageLabel.classList.remove("red");
+    imageLabel.style.color = "#8ac0e2";
+    mobileImageLabel.classList.remove("red");
   } else {
-    imageImg.style.display = "inline";
+    imageImg.style.display = "block";
     imageBorder.style.outline = "2px dashed red";
+    imageLabel.style.color = "red";
     imageLabel.classList.add("red");
+    mobileImageLabel.classList.add("red");
   }
 }

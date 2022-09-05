@@ -21,6 +21,17 @@ const lastNameLabel = document.getElementById("lastname-label");
 const emailLabel = document.getElementById("email-label");
 const phoneLabel = document.getElementById("phone-label");
 
+const laptopPage = document.getElementById("laptop-page");
+
+/* Preventing the default action of the button. */
+laptopPage.addEventListener("click", (e) => {
+  if (!validation()) {
+    e.preventDefault();
+  } else {
+    location.href = "../pages/laptop.html";
+  }
+});
+
 /* Preventing the default action of the button. */
 nextBtn.addEventListener("click", (e) => {
   if (!validation()) {

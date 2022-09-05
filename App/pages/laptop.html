@@ -11,11 +11,12 @@
   <body>
     
     <div class="pages">
-         <a class="arrowback" href="../../index.html">
-        <img src="../../assets/images/Back-arrow.svg" 
-      /></a>
-      <p style="margin-left:31.3%;">თანამშრომლის ინფო</p>
-      <p>ლეპტოპის მახასიათებლები</p>
+         <a class="arrowback" href="./employee.html">
+        <img class="desktop" src="../../assets/images/Back-arrow.svg" 
+      /> <img class="mobile" src="../../assets/images/back-mobile.svg" ></a>
+      <p style="margin-left:31.3%;" class="employee-page"><a href="./employee.html"> თანამშრომლის ინფო</a></p>
+      <p class="laptop-page"><a href="">ლეპტოპის მახასიათებლები</a></p>
+      <h2 class="pages-count">2/2</h2>
     </div>
 <hr class="page-hr">
     <section class="section">
@@ -26,12 +27,16 @@
                 
                 <img id="preview">
                 <img id="invalid-vector3" src="../../assets/images/invalid-vector.svg" alt="">
+                <img class="mobileb mobile-img" src="../../assets/images/photo-mobile.svg" alt="">
+                <h4 class="laptop-h5 mobileb"  >ლეპტოპის ფოტოს ატვირთვა</h4>
                 <h4 class="laptop-h4" >ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h4>
             </div>
             <div class="upload-retry">
                <img src="../../assets/images/upload-success.png" class="retry-img">
+               <div class="upload-p">
                  <p class="retry-name">1</p>
                   <p class="retry-size">2</p>
+                  </div>
                    <input type="file" accept="image/*" id="image" class="retry-upload" onchange="loadPhoto(event)"
                       />
             </div>
@@ -39,7 +44,7 @@
                 <div class="name-brand">
                     <div class="laptop-name">
                     <label  class="label" id="lp-name-label">ლეპტოპის სახელი</label></br>
-                    <input placeholder="HP" required="required" id="laptop-name"
+                    <input type="text" placeholder="HP" required="required" id="laptop-name"
                      oninvalid="this.setCustomValidity('შეიყვანე ლეპტოპის სახელი')" 
                      onchange="this.setCustomValidity('')"
                      onkeyup="setInput(this.id ,this.value)"

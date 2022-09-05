@@ -2,29 +2,6 @@
   font-family: HelveticaNeue;
   src: url(../../assets/fonts/HelveticaNeue.ttc);
 }
-
-@media screen and (min-width: 845px) {
-  .section {
-    background-color: white;
-    margin: 2.2% 18% 0;
-  }
-
-  .form {
-    padding: 5.5% 14.2% 0;
-  }
-}
-
-@media screen and (max-width: 844px) {
-  .section {
-    background-color: white;
-    margin: 0;
-  }
-  .form {
-    padding: 1.2% 4.2% 0;
-    display: block;
-  }
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,281 +14,574 @@ body {
   background-color: #f7f7f7;
 }
 
-.arrowback {
-  margin-left: 3.65%;
-  display: inline-block;
+@media screen and (min-width: 1200px) {
+  .arrowback {
+    margin-left: 3.65%;
+    display: inline-block;
+  }
+  .mobile,
+  .mobileb,
+  .pages-count {
+    display: none;
+  }
+  .upload-p {
+    display: inline-block;
+  }
+  .pages {
+    width: 100%;
+    display: inline-block;
+  }
+  #employee-page {
+    visibility: visible;
+  }
+
+  .pages a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .pages p {
+    display: inline-block;
+    margin-top: 4.7%;
+    margin-right: 3.45%;
+  }
+
+  section {
+    background-color: white;
+    margin: 2.2% 18% 0;
+    height: fit-content;
+    padding-bottom: 3%;
+  }
+
+  form {
+    padding: 5.5% 14.2% 0;
+  }
+  /* Photo upload */
+  .upload-img {
+    width: 100%;
+    height: 25rem;
+    border-radius: 15px;
+    border: none;
+    outline: 2px dashed #4386a9;
+    background-color: #f7f7f7;
+  }
+
+  .upload-img input {
+    position: relative;
+    top: 60%;
+    left: 40%;
+    width: 25%;
+    height: 14%;
+    color: transparent;
+  }
+
+  .upload-img input::-webkit-file-upload-button,
+  .retry-upload::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .upload-img input::before {
+    content: "ატვირთე";
+    display: inline-block;
+    background: #62a1eb;
+    border-radius: 8px;
+    padding: 7% 22%;
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+  }
+  .upload-img input:hover::before,
+  .next-btn:hover,
+  .retry-upload:hover::before {
+    background: #317ad0;
+    transition: 200ms ease;
+  }
+  .upload-img input:active::before,
+  .next-btn:active,
+  .retry-upload:active::before {
+    background: #1a5dab;
+  }
+
+  .upload-img h4 {
+    user-select: none;
+    width: 30%;
+    line-height: 200%;
+    font-size: 20px;
+    color: #4386a9;
+    margin: 5% auto 0;
+    text-align: center;
+  }
+
+  /* inputs fields  */
+  .label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  h5 {
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #2e2e2e;
+  }
+  .name-brand,
+  .lp-cpu,
+  .lp-memory,
+  .price-date {
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name-brand input,
+  .name-brand select,
+  .price-date input,
+  .lp-ram input {
+    width: 25rem;
+    height: 3.75rem;
+    padding-left: 8px;
+  }
+  .lp-cpu input,
+  .lp-cpu select {
+    width: 17rem;
+    height: 3.75rem;
+    padding-left: 8px;
+    margin-top: 0.5rem;
+  }
+
+  .name-brand input,
+  .lp-cpu input,
+  .price-date input,
+  .lp-ram input {
+    border: 1.8px solid #8ac0e2;
+    outline: none;
+    border-radius: 8px;
+  }
+
+  .name-brand select,
+  .lp-cpu select {
+    background-color: #ebebeb;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    border-radius: 8px;
+  }
+
+  .hr {
+    margin-top: 5%;
+  }
+
+  .ram-type {
+    width: 25rem;
+    height: 3.75rem;
+  }
+
+  .condition {
+    display: block;
+    margin-top: 5%;
+    align-items: center;
+  }
+
+  .name-brand input,
+  .price-date input,
+  .lp-ram input {
+    margin-top: 0.5rem;
+  }
+
+  .ram-type,
+  .condition {
+    height: 106px;
+  }
+
+  .ram-type input,
+  .condition input {
+    margin-top: 2rem;
+    size: 25px;
+  }
+
+  span {
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .page-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+
+  .back-btn {
+    text-decoration: none;
+    font-size: 18px;
+    color: #62a1eb;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+  }
+
+  .next-btn {
+    align-items: center;
+    width: 13.2rem;
+    height: 3.75rem;
+    background-color: #62a1eb;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .page-hr {
+    width: 13.7%;
+    margin-left: 53.25%;
+    margin-top: 0.5%;
+    border: 1px solid black;
+  }
+
+  #preview {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .upload-retry {
+    max-width: 880px;
+    display: none;
+    width: 100%;
+  }
+
+  .upload-retry p {
+    display: inline-block;
+    margin-left: 0.7rem;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 2.7rem;
+  }
+
+  .retry-size {
+    color: #5f5f5f;
+  }
+
+  /* // TO DOO reupload button not to move */
+
+  .retry-upload {
+    margin-left: 35.8%;
+    left: 40%;
+    height: 14%;
+    color: transparent;
+  }
+
+  .retry-upload::before {
+    content: "თავიდან ატვირთე ";
+    display: inline-block;
+    background: #62a1eb;
+    border-radius: 8px;
+    padding: 18px 18px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+  }
+  .logo {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  #invalid-vector,
+  #invalid-vector2 {
+    margin-left: 0.5rem;
+    visibility: hidden;
+  }
+
+  #invalid-vector3 {
+    margin: auto;
+
+    width: 38px;
+    height: 34px;
+    display: none;
+  }
 }
 
-.pages {
-  width: 100%;
-  display: inline-block;
-}
+@media screen and (max-width: 1200px) {
+  body {
+    background-color: #f6f6f6;
+    min-height: 100vh;
+    padding: 30px 20px 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  hr {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+  }
 
-.pages p {
-  display: inline-block;
-  margin-top: 4.7%;
-  margin-right: 3.45%;
-  font-size: 20px;
-  font-weight: bold;
-}
+  .pages-count {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #898989;
+    margin-bottom: 45px;
+  }
+  .employee-page {
+    display: none;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile,
+  .laptop-page {
+    display: inline-block;
+  }
 
-section {
-  background-color: white;
-  margin: 2.2% 18% 0;
-  height: fit-content;
-  padding-bottom: 3%;
-}
+  .laptop-page {
+    margin-left: 50px;
+    margin-bottom: 5px;
+  }
+  .pages {
+    width: 100%;
+  }
+  .main {
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    height: 60px;
 
-form {
-  padding: 5.5% 14.2% 0;
-}
-/* Photo upload */
-.upload-img {
-  width: 100%;
-  height: 25rem;
-  border-radius: 15px;
-  border: none;
-  outline: 2px dashed #4386a9;
-  background-color: #f7f7f7;
-}
+    margin-bottom: 5px;
+  }
+  h5 {
+    margin-bottom: 15px;
+  }
+  .upload-img {
+    width: 100%;
+    height: 15rem;
+    border-radius: 15px;
+    border: none;
+    outline: 2px dashed #4386a9;
+    background-color: #f7f7f7;
+    margin-bottom: 30px;
+  }
 
-.upload-img input {
-  position: relative;
-  top: 60%;
-  left: 40%;
-  width: 25%;
-  height: 14%;
-  color: transparent;
-}
+  .upload-img input {
+    position: relative;
+    top: 60%;
+    left: 27%;
+    width: 50%;
+    height: 14%;
+    color: transparent;
+  }
 
-.upload-img input::-webkit-file-upload-button,
-.retry-upload::-webkit-file-upload-button {
-  visibility: hidden;
-}
-.upload-img input::before {
-  content: "ატვირთე";
-  display: inline-block;
-  background: #62a1eb;
-  border-radius: 8px;
-  padding: 7% 22%;
-  user-select: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: white;
-}
-.upload-img input:hover::before,
-.next-btn:hover,
-.retry-upload:hover::before {
-  background: #317ad0;
-  transition: 200ms ease;
-}
-.upload-img input:active::before,
-.next-btn:active,
-.retry-upload:active::before {
-  background: #1a5dab;
-}
+  .upload-img input::-webkit-file-upload-button,
+  .retry-upload::-webkit-file-upload-button {
+    visibility: hidden;
+  }
 
-.upload-img h4 {
-  user-select: none;
-  width: 30%;
-  line-height: 200%;
-  font-size: 20px;
-  color: #4386a9;
-  margin: 5% auto 0;
-  text-align: center;
-}
+  .laptop-h4 {
+    display: none;
+  }
+  .mobile-img {
+    margin: 1rem auto;
+  }
+  .mobileb {
+    display: block;
+  }
+  .laptop-h5 {
+    margin: 20px auto 0;
+    text-align: center;
+    max-width: 50%;
+    line-height: 26px;
+    font-size: 16;
+    font-weight: 400;
+    color: #4386a9;
+  }
+  #preview {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
 
-/* inputs fields  */
-.label {
-  font-weight: bold;
-  font-size: 18px;
-}
-h5 {
-  margin-top: 7px;
-  font-weight: 300;
-  font-size: 14px;
-  color: #2e2e2e;
-}
-.name-brand,
-.lp-cpu,
-.lp-memory,
-.price-date {
-  display: flex;
-  margin-top: 5%;
-  justify-content: space-between;
-  align-items: center;
-}
-.name-brand input,
-.name-brand select,
-.price-date input,
-.lp-ram input {
-  width: 25rem;
-  height: 3.75rem;
-  padding-left: 8px;
-}
-.lp-cpu input,
-.lp-cpu select {
-  width: 17rem;
-  height: 3.75rem;
-  padding-left: 8px;
-  margin-top: 0.5rem;
-}
+  .upload-retry {
+    display: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-.name-brand input,
-.lp-cpu input,
-.price-date input,
-.lp-ram input {
-  border: 1.8px solid #8ac0e2;
-  outline: none;
-  border-radius: 8px;
-}
+  .upload-p {
+    display: inline-block;
+  }
+  .retry-size {
+    display: inline-block;
+  }
+  .upload-retry p {
+    width: auto;
+    max-width: 45px;
+    margin-left: 0.1rem;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+  }
 
-.name-brand select,
-.lp-cpu select {
-  background-color: #ebebeb;
-  border: none;
-  outline: none;
-  margin-top: 15px;
-  border-radius: 8px;
-}
+  .retry-size {
+    color: #5f5f5f;
+  }
 
-.hr {
-  margin-top: 5%;
-}
+  .retry-upload {
+    position: relative;
+    left: 27%;
+    height: 14%;
+    color: transparent;
+  }
 
-.ram-type {
-  width: 25rem;
-  height: 3.75rem;
-}
+  .retry-upload::before {
+    content: "თავიდან ატვირთე ";
+    display: inline-block;
+    background: #62a1eb;
+    border-radius: 8px;
+    padding: 10px 10px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+  }
 
-.condition {
-  display: block;
-  margin-top: 5%;
-  align-items: center;
-}
+  .label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  h5 {
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #2e2e2e;
+  }
+  .name-brand,
+  .lp-cpu,
+  .lp-memory,
+  .price-date {
+    margin-top: 5%;
 
-.name-brand input,
-.price-date input,
-.lp-ram input {
-  margin-top: 0.5rem;
-}
+    align-items: center;
+  }
+  .name-brand input,
+  .name-brand select,
+  .price-date input,
+  .lp-ram input {
+    width: 100%;
+    height: 3.75rem;
+    padding-left: 8px;
+  }
+  .lp-cpu input,
+  .lp-cpu select {
+    width: 100%;
+    height: 3.75rem;
+    padding-left: 8px;
+    margin-top: 0.5rem;
+  }
 
-.ram-type,
-.condition {
-  height: 106px;
-}
+  .name-brand input,
+  .lp-cpu input,
+  .price-date input,
+  .lp-ram input {
+    border: 1.8px solid #8ac0e2;
+    outline: none;
+    border-radius: 8px;
+  }
 
-.ram-type input,
-.condition input {
-  margin-top: 2rem;
-  size: 25px;
-}
+  .name-brand select,
+  .lp-cpu select {
+    background-color: #ebebeb;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    border-radius: 8px;
+  }
 
-span {
-  margin-left: 10px;
-  font-size: 16px;
-  line-height: 21px;
-}
+  .ram-type {
+    width: 100%;
+    height: 3.75rem;
+  }
 
-.page-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4rem;
-}
+  .condition {
+    display: block;
+    margin-top: 5%;
+    align-items: center;
+  }
 
-.back-btn {
-  text-decoration: none;
-  font-size: 18px;
-  color: #62a1eb;
-  letter-spacing: 0.08em;
-  margin-top: 1rem;
-}
+  .name-brand input,
+  .price-date input,
+  .lp-ram input {
+    margin-top: 0.5rem;
+  }
 
-.next-btn {
-  align-items: center;
-  width: 13.2rem;
-  height: 3.75rem;
-  background-color: #62a1eb;
-  color: white;
-  border-radius: 8px;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
+  .ram-type,
+  .condition {
+    height: 106px;
+  }
 
-.page-hr {
-  width: 13.7%;
-  margin-left: 53.25%;
-  margin-top: 0.5%;
-  border: 1px solid black;
-}
+  .ram-type input,
+  .condition input {
+    margin-top: 2rem;
+    size: 25px;
+  }
 
-#preview {
-  display: none;
-  width: 100%;
-  height: 100%;
-}
+  span {
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 21px;
+  }
 
-.upload-retry {
-  display: none;
-  width: 100%;
-}
+  .page-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
 
-.upload-retry p {
-  display: inline-block;
-  margin-left: 0.7rem;
-  font-size: 18px;
-  font-weight: 400;
-  margin-top: 2.7rem;
-}
+  .back-btn {
+    text-decoration: none;
+    font-size: 18px;
+    color: #62a1eb;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+  }
 
-.retry-size {
-  color: #5f5f5f;
-}
-
-/* // TO DOO reupload button not to move */
-
-.retry-upload {
-  position: relative;
-  left: 40%;
-  height: 14%;
-  color: transparent;
-}
-
-.retry-upload::before {
-  content: "თავიდან ატვირთე ";
-  display: inline-block;
-  background: #62a1eb;
-  border-radius: 8px;
-  padding: 18px 18px;
-  user-select: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: white;
+  .next-btn {
+    align-items: center;
+    width: 11rem;
+    height: 3.75rem;
+    background-color: #62a1eb;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .logo {
+    display: none;
+  }
+  #cpus {
+    margin-bottom: 10px;
+  }
+  #invalid-vector3 {
+    display: none;
+    margin: auto;
+  }
+  #invalid-vector2,
+  #invalid-vector {
+    visibility: hidden;
+  }
 }
 
 /* // TO DOO GEL LOGO  */
 
-.logo {
-  text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
 .red {
   color: red;
-}
-
-#invalid-vector,
-#invalid-vector2 {
-  margin-left: 0.5rem;
-  visibility: hidden;
-}
-
-#invalid-vector3 {
-  margin-left: 12.5rem;
-  margin-top: 3rem;
-  width: 38px;
-  height: 34px;
-  display: none;
 }
