@@ -52,7 +52,6 @@ function createElement(element, text, className, id, href, source, saveId) {
     elementDetails.addEventListener("click", function () {
       const selectedId = elementDetails.parentElement.closest("li").id;
       localStorage.setItem("selectedId", selectedId);
-      console.log(localStorage.getItem("selectedId"));
     });
   }
   return elementDetails;

@@ -87,7 +87,6 @@ function postData() {
     method: "POST",
     body: formData,
   }).then((response) => {
-    console.log(response.status);
     if (response.status == 200) {
       localStorage.clear();
       return (window.location.href = "../pages/form-success.html");
@@ -229,7 +228,6 @@ function checkImageUpload() {
   let mobileImageLabel = document.querySelector(".laptop-h5");
   let imageBorder = document.querySelector(".upload-img");
   let imageImg = document.getElementById("invalid-vector3");
-  console.log(imageBorder);
   if (image.files[0]) {
     imageLabel.classList.remove("red");
     imageLabel.style.color = "#8ac0e2";

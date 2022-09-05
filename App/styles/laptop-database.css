@@ -40,7 +40,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     list-style: none;
-    gap: 5%;
+    gap: 2%;
   }
   .laptop-list::after {
     content: "";
@@ -76,7 +76,7 @@ body {
 
   .unit-img > img {
     width: 100%;
-    height: fit-content;
+    height: 2%;
   }
 
   .unit-info-author {

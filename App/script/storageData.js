@@ -44,7 +44,6 @@ function checkSelection(char) {
  */
 function radioOnClickCondition(value) {
   localStorage.setItem("condition", value);
-  console.log(localStorage.getItem("condition"));
 }
 
 function radioOnClickMemory(value) {
@@ -80,7 +79,6 @@ function radioCheck() {
 
 function setInput(field, value) {
   localStorage.setItem(field, value);
-  console.log(localStorage.getItem(field));
 }
 
 /* Listening for a change event on the positions dropdown menu. When the event is triggered, it gets
@@ -92,7 +90,6 @@ if (positions !== null) {
     var id = options[options.selectedIndex].id.split("-")[1];
 
     localStorage.setItem("position_id", id);
-    console.log(localStorage.getItem("position_id"));
   });
 }
 
