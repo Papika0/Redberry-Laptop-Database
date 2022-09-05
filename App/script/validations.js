@@ -72,8 +72,7 @@ function checkInputs(input, header, label) {
     input.style.borderColor = "red";
     label.style.color = "red";
   } else {
-    header.innerText =
-      "გამოიყენეთ ქართული ასოები და შეიყვანეთ მინიმუმ 2 სიმბოლო";
+    header.innerText = "მინიმუმ 2 სიმბოლო, ქართული ასოები";
     header.style.color = "red";
     input.style.borderColor = "red";
     label.style.color = "red";

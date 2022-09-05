@@ -9,90 +9,98 @@
     <title>Employee Info</title>
   </head>
   <body>
-    <div class="arrowback">
-      <a href="../../index.html">
-        <img src="../../assets/images/Back-arrow.svg"
-      /></a>
-    </div>
-
     <div class="pages">
-      <p>
-        <a href="./employee.html" id="employee-page">თანამშრომლის ინფო</a>
+      <a class="arrowback" href="../../index.html">
+        <img class="desktop" src="../../assets/images/Back-arrow.svg" />
+        <img class="mobile" src="../../assets/images/back-mobile.svg"
+      /></a>
+      <p class="employee-page" id="employee-page">
+        <a href="./employee.html"> თანამშრომლის ინფო</a>
       </p>
-      <p>
-        <a id="laptop-page">ლეპტოპის მახასიათებლები</a>
+      <p class="laptop-page" id="laptop-page">
+        <a href="">ლეპტოპის მახასიათებლები</a>
       </p>
+      <h2 class="pages-count">1/2</h2>
     </div>
+    <hr class="page-hr" />
 
     <section>
-      <div class="namelstname">
-        <div class="name">
-          <label for="Name" id="name-label">სახელი</label> <br />
-          <input
-            type="text"
-            name="Name"
-            id="Name"
-            placeholder="სახელი"
-            onkeyup="setInput(this.id ,this.value)"
-          />
-          <h5 id="name-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
+      <form onsubmit="return false">
+        <div class="namelstname">
+          <div class="name">
+            <label for="Name" id="name-label">სახელი</label> <br />
+            <input
+              type="text"
+              name="Name"
+              id="Name"
+              placeholder="სახელი"
+              onkeyup="setInput(this.id ,this.value)"
+            />
+            <h5 id="name-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
+          </div>
+
+          <div class="lastname">
+            <label for="Lastname" id="lastname-label">გვარი</label> <br />
+            <input
+              type="text"
+              name="Lastname"
+              id="Lastname"
+              placeholder="გვარი"
+              onkeyup="setInput(this.id ,this.value)"
+            />
+            <h5 id="lastname-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
+          </div>
         </div>
 
-        <div class="lastname">
-          <label for="Lastname" id="lastname-label">გვარი</label> <br />
+        <div class="teams">
+          <select
+            class="teams"
+            id="teams"
+            onchange="setInput(this.id ,this.value)"
+          >
+            <option hidden selected>თიმი</option>
+          </select>
+          <br />
+        </div>
+
+        <div class="positions">
+          <select id="positions" onchange="setInput(this.id ,this.value)">
+            <option hidden selected>პოზიცია</option></select
+          ><br />
+        </div>
+
+        <div class="email">
+          <label for="Email" id="email-label">მეილი</label> <br />
           <input
-            type="text"
-            name="Lastname"
-            id="Lastname"
-            placeholder="გვარი"
+            type="email"
+            name="Email"
+            id="Email"
+            placeholder="example@redberry.ge"
             onkeyup="setInput(this.id ,this.value)"
           />
-          <h5 id="lastname-h5">მინიმუმ 2 სიმბოლო, ქართული ასოები</h5>
+          <h5 id="email-h5">უნდა მთავრდებოდეს @redberry.ge-ით</h5>
         </div>
-      </div>
 
-      <div class="teams">
-        <select
-          class="teams"
-          id="teams"
-          onchange="setInput(this.id ,this.value)"
-        >
-          <option hidden selected>თიმი</option>
-        </select>
-        <br />
-      </div>
-
-      <div class="positions">
-        <select id="positions" onchange="setInput(this.id ,this.value)">
-          <option hidden selected>პოზიცია</option></select
-        ><br />
-      </div>
-
-      <div class="email">
-        <label for="Email" id="email-label">მეილი</label> <br />
-        <input
-          type="email"
-          name="Email"
-          id="Email"
-          placeholder="example@redberry.ge"
-          onkeyup="setInput(this.id ,this.value)"
-        />
-        <h5 id="email-h5">უნდა მთავრდებოდეს @redberry.ge-ით</h5>
-      </div>
-
-      <div class="phone">
-        <label for="Phone" id="phone-label">ტელეფონის ნომერი</label> <br />
-        <input
-          type="text"
-          name="Phone"
-          id="Phone"
-          placeholder="+995 598 00 00 00"
-          onkeyup="setInput(this.id ,this.value)"
-        />
-        <h5 id="phone-h5">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</h5>
-      </div>
-
-      <button id="next-btn" href="" class="next-btn">შემდეგი</button>
+        <div class="phone">
+          <label for="Phone" id="phone-label">ტელეფონის ნომერი</label> <br />
+          <input
+            type="text"
+            name="Phone"
+            id="Phone"
+            placeholder="+995 598 00 00 00"
+            onkeyup="setInput(this.id ,this.value)"
+          />
+          <h5 class="mobile phone-h5" id="mobile-phone-h5">
+            ქართული მობ-ნომრის ფორმატი
+          </h5>
+          <h5 id="phone-h5" class="desktop">
+            უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს
+          </h5>
+        </div>
+        <div class="button-page">
+          <button id="next-btn" class="next-btn">შემდეგი</button>
+        </div>
+      </form>
     </section>
 
     <div class="logo">
