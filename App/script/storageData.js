@@ -124,4 +124,10 @@ window.onload = (event) => {
   checkSelection("cpus");
   checkSelection("brands");
   radioCheck();
+  if (
+    document.getElementById("preview") !== null ||
+    document.getElementById("preview") !== undefined
+  ) {
+    imageOnload();
+  }
 };

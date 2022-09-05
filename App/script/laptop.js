@@ -21,12 +21,40 @@ var loadPhoto = function (event) {
     var output = document.getElementById("preview");
     output.src = reader.result;
     localStorage.setItem("image", event.target.files[0]);
+    localStorage.setItem("image-onload", reader.result);
+    localStorage.setItem("image-name", event.target.files[0].name);
+    localStorage.setItem("image-size", event.target.files[0].size);
     changesOnUpload(event);
   };
   let imageImg = document.getElementById("invalid-vector3");
   imageImg.style.display = "none";
   reader.readAsDataURL(event.target.files[0]);
 };
+
+/**
+ * If the image, name, and size are stored in local storage, then display the image, hide the upload
+ * button, and display the retry button.
+ */
+function imageOnload() {
+  let image = localStorage.getItem("image-onload");
+  let name = localStorage.getItem("image-name");
+  let size = localStorage.getItem("image-size");
+
+  if (image && name && size) {
+    img.src = image;
+    img.style.display = "block";
+    uploadH5.style.display = "none";
+    mobileImg.style.display = "none";
+    upload.style.display = "none";
+    uploadBorder.style.outline = "none";
+    uploadH4.style.display = "none";
+    uploadRetry.style.display = "block";
+    uploadRetryCreate(
+      name,
+      Math.round((size / 1024 / 1024) * 100) / 100 + " mb"
+    );
+  }
+}
 
 function changesOnUpload(event) {
   let fileName = event.target.files[0].name;
@@ -48,8 +76,6 @@ function uploadRetryCreate(name, size) {
   retryName.innerText = name;
   retrySize.innerText = size;
 }
-
-// TOO DOO Re Upload image Post
 
 /**
  * It takes the data from the local storage and sends it to the server.
@@ -114,8 +140,8 @@ function checkAll() {
   checkNumber("cpu-threads");
   checkNumber("laptop-ram");
   checkNumber("laptop-price");
-  checkSelect("brands");
-  checkSelect("cpus");
+  checkBrand();
+  checkCpus();
   radioValState();
   radioValType();
   checkImageUpload();
@@ -168,9 +194,23 @@ function checkNumber(element) {
  * </code>
  * @param element - the id of the select element
  */
-function checkSelect(element) {
-  const selection = document.getElementById(element);
-  if (selection.options[selection.selectedIndex].value != "") {
+
+function checkBrand() {
+  const selection = document.getElementById("brands");
+  console.log(selection.value);
+  if (selection.value !== "ლეპტოპის ბრენდი") {
+    selection.style.border = "none";
+    selection.options[0].classList.remove("red");
+  } else {
+    selection.options[0].classList.add("red");
+    selection.style.border = "1.8px solid red";
+  }
+}
+
+function checkCpus() {
+  const selection = document.getElementById("cpus");
+  console.log(selection.value);
+  if (selection.value !== "CPU") {
     selection.style.border = "none";
     selection.options[0].classList.remove("red");
   } else {
